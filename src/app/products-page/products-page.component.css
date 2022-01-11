@@ -1,0 +1,118 @@
+.products__title{
+  max-width: 1440px;
+  margin: 0px auto;
+  padding-left: 14%;
+  padding-top: 50px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 50px;
+}
+
+.sort__wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 16%;
+}
+.sort {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.sort input {
+  margin-right: 7px;
+  margin-bottom: 5px;
+}
+
+.sort__title {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px;
+}
+
+input[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  width: 13px;
+  height: 13px;
+  border: 2px solid #C4C4C4;
+  content: "";
+  background: #FFF;
+}
+
+input[type="checkbox"]:after {
+  position: relative;
+  display: block;
+  left: 0px;
+  top: -13px;
+  width: 13px;
+  height: 13px;
+  content: "";
+}
+
+input[type="checkbox"]:hover:after {
+  background: #C4C4C4;
+}
+
+input[type="checkbox"]:checked:before {
+  background: #FEC341;
+  border: 2px solid #FEC341;
+}
+
+input[type="checkbox"]:not(:disabled):checked:hover:after {
+  background: #FEC341;
+  border: 2px solid #C4C4C4;
+}
+
+.card__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 83%;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22%;
+    margin:15px;
+    height: 380px;
+    background-color: #fff;
+    border-radius: 25px;
+    padding: 30px 10px 50px;
+}
+.card:hover{
+  cursor: pointer;
+  box-shadow: 0px 0px 15px #d5d4d4;
+}
+.card__img{
+    max-width: 85%;
+    max-height: 150px;
+}
+.card__img_wrap{
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card__desc_wrap{
+  height: 35%;
+}
+.card__title{
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 8px;
+    padding-top: 10px;
+}
+.card__price{
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 18px;
+    text-align: center;
+}

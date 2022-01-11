@@ -1,0 +1,28 @@
+.header{
+    min-height: 70px;
+    background-color: #FEC341;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.header>.container{
+    width: 1440px;
+}
+
+.menu__nav{
+    display: flex;
+    justify-content: space-between;
+}
+.menu__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__list>li:not(:last-child){
+    padding-right: 30px;
+}
+.header__logo{
+    margin-right: 30px;
+    width: 52px;
+    height: 52px;
+}

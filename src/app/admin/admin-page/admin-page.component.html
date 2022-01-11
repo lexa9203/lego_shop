@@ -1,0 +1,17 @@
+<header class="header">
+    <div class="container">
+        <nav class="menu__nav">
+            <a routerLink="/">
+                <img class="header__logo" src="../../assets/img/logo.png" alt="logo">
+            </a>
+            <ul class="menu__list account">
+                <li *ngIf="log()" routerLinkActive="active"><a routerLink="/admin/add">Добавить товар</a></li>
+                <li *ngIf="log()" routerLinkActive="active"><a routerLink="/admin/edit">Редактировать товар</a></li>
+                <li *ngIf="!log()" routerLinkActive="active"><a routerLink="/admin/login">Войти</a></li>
+                <li *ngIf="log()" routerLinkActive="active"><a (click)=logout()>Выйти</a></li>
+            </ul>
+            
+        </nav>
+    </div>
+</header>
+<router-outlet></router-outlet>

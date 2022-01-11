@@ -1,0 +1,39 @@
+<form [formGroup]="form" class="form-product" (ngSubmit)="submit()">
+
+    <h2 class="form-title">Добавить товар</h2>
+
+    <div class="form-control">
+        <label for="category">Категория</label>
+        <select formControlName="category" name="category">
+            <option value="creator">Creator</option>
+            <option value="speed">Speed Champions</option>
+            <option value="city">Lego City</option>
+            <option value="batman">Batman Movie</option>
+            <option value="technic">Technic</option>
+        </select>
+        <small class="dangerMessage" *ngIf="form.controls['category'].invalid && form.controls['category'].touched">выберите категорию товара</small>
+    </div>
+
+    <div class="form-control">
+        <label for="name">Название</label>
+        <input id="name" type="text" formControlName="name" required>
+        <small class="dangerMessage" *ngIf="form.controls['name'].invalid && form.controls['name'].touched">введите название</small>
+    </div>
+
+    <div class="form-control">
+        <label for="price">Цена</label>
+        <input id="price" type="number" formControlName="price" required>
+        <small class="dangerMessage" *ngIf="form.controls['price'].invalid && form.controls['price'].touched">введите цену</small>
+    </div>
+
+    <div class="form-control">
+        <label for="photo">Фото</label>
+        <input id="photo" class="border-none" type="file" formControlName="photo" (change)="onFileChanged($event)" required>
+        <small class="dangerMessage" *ngIf="form.controls['photo'].invalid && form.controls['photo'].touched">прикрепите фото товара</small>
+        <br>
+        <img *ngIf="imgSrc" [src]="imgSrc" width="50%" height="auto">
+    </div>
+
+    <button class="form-btn btn" type="submit" [disabled]="form.invalid">Добавить</button>
+</form>
+

@@ -1,0 +1,41 @@
+.form-login{
+    width: 500px;
+    min-height: 300px;
+    margin: 10vh auto 0;
+    padding: 20px;
+    background-color: #EFF2F4;
+    border-radius: 20px;
+}
+.form-title{
+    font-size: 20px;
+    font-family: 'Proxima Nova' serif;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 30px;
+}
+.form-control{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+.form-control label{
+    font-size: 16px;
+    font-family: 'Proxima Nova' serif;
+    font-weight: 700;
+}
+.form-control input{
+    border: 1px solid black;
+    height: 35px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 25px;
+}
+input.ng-touched.ng-invalid {
+    border:solid #FF1919 1px;
+}
+input.ng-touched.ng-valid {
+    border:solid #00CB21 1px;
+}
+.dangerMessage{
+    color: #FF1919;
+}

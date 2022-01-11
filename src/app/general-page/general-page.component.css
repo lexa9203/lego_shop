@@ -1,0 +1,130 @@
+.header{
+    min-height: 70px;
+    background-color: #FEC341;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.header>.container{
+    width: 1440px;
+}
+
+.menu__nav{
+    display: flex;
+    justify-content: space-between;
+}
+.menu__nav>div{
+    display: flex;
+}
+.menu__list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu__list>li:not(:last-child){
+    padding-right: 30px;
+}
+.header__logo{
+    margin-right: 70px;
+    width: 52px;
+    height: 52px;
+}
+.menu__list_img{
+    display: none;
+}
+.header__mobile{
+    display: none;
+}
+@media screen and (max-width:920px) {
+    .menu__list_img {
+        display: flex;
+        align-items: center;
+    }
+    .menu__list_img>img{
+        height: 40px;
+        width: 40px;
+        margin-left: 10px;
+    }
+    .account {
+        display: none;
+    }
+    .container{
+        padding: 0 25px;
+    }
+}
+@media screen and (max-width:700px) {
+    .header__mobile{
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        padding: 10px;
+    }
+    .header__mobile>p{
+        padding-left: 10px;
+    }
+    .header__logo{
+        display: none;
+    }
+}
+
+/* footer */
+.footer{
+    min-height: 300px;
+    background: #201E47;
+    color: white;
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0 80px;
+}
+.footer__content{
+    display: flex;
+    flex: 0 1 45%;
+    justify-content: flex-start;
+}
+.footer__col:not(:last-child){
+    margin-right: 50px;
+}
+.content__title{
+    font-weight: 600;
+    padding-bottom: 25px;
+}
+.footer__list_empty{
+    padding: 8px 0px;
+}
+.footer__col>ul{
+    font-size: 13px;
+    line-height: 16px;
+}
+.footer__col>ul>li{
+    opacity: 1;
+}
+.footer__col>ul>li:hover{
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+    opacity: 0.8;
+}
+.social__title{
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.wrapper__icon{
+    display: flex;
+}
+.social__icon{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+    opacity: 1;
+}
+.social__icon:hover{
+    cursor: pointer;
+    transition: opacity ease 0.5s;
+    opacity: 0.8;
+}

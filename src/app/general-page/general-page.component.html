@@ -1,0 +1,91 @@
+<section class="header__mobile">
+    <img class="mobile__img_logo" src="../../assets/img/logo.png" alt="logo">
+    <p>Сеть сертифицированных магазинов LEGO</p>
+</section>
+<header class="header">
+    <div class="container">
+        <nav class="menu__nav">
+            <div>
+                <a routerLink="/">
+                    <img class="header__logo" src="../../assets/img/logo.png" alt="logo">
+                </a>
+                <ul class="menu__list">
+                    <li routerLinkActive="active"><a href="#">Конструкторы</a> </li>
+                    <li routerLinkActive="active"><a href="#">Аксессуары</a></li>
+                    <li routerLinkActive="active"><a href="#">Эксклюзивы</a></li>
+                    <li routerLinkActive="active"><a href="#">Новинки</a></li>
+                </ul>
+            </div>
+            <ul class="menu__list account">
+                <li routerLinkActive="active"><a routerLink="/cart">Корзина</a></li>
+            </ul>
+            <ul class="menu__list_img">
+                <img src="../../assets/img/basket.png" alt="basket">
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__logo">
+                <img src="../../assets/img/logo.png" alt="logo">
+            </div>
+            <div class="footer__content">
+                <div class="footer__col">
+                    <div class="content__title">КОНСТРУКТОРЫ</div>
+                    <ul>
+                        <li>Коллекционные наборы</li>
+                        <li>4+</li>
+                        <li>ART</li>
+                        <li>Architecture</li>
+                        <li>Batman Movie</li>
+                        <li>Boost</li>
+                        <li>BrickHeadz</li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <div class="content__title">АКСЕССУАРЫ</div>
+                    <ul>
+                        <li>Рюкзаки и сумки</li>
+                        <li>Канцтовары</li>
+                        <li>Чемоданы</li>
+                        <li class="footer__list_empty"></li>
+                        <li>Пончо</li>
+                        <li>Подарочные наборы</li>
+                        <li>Оружие детское</li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <div class="content__title">О КОМПАНИИ</div>
+                    <ul>
+                        <li>О нас</li>
+                        <li>Акции</li>
+                        <li>Новости</li>
+                        <li>Мероприятия</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__social">
+                <p class="social__title">ПРИСОЕДИНЯЙТЕСЬ К НАМ В СОЦСЕТЯХ</p>
+                <div class="wrapper__icon">
+                    <div class="social__icon">
+                        <img src="../../assets/img/instagram.png" alt="instagram">
+                    </div>
+                    <div class="social__icon">
+                        <img src="../../assets/img/facebook.png" alt="facebook">
+                    </div>
+                    <div class="social__icon">
+                        <img src="../../assets/img/youtube.png" alt="youtube">
+                    </div>
+                    <div class="social__icon">
+                        <img src="../../assets/img/twitter.png" alt="twitter">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

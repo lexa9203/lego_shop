@@ -1,0 +1,18 @@
+<form [formGroup]="form" class="form-login" (ngSubmit)="myValidForm()">
+
+    <h2 class="form-title">Войти как администратор</h2>
+
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input [(ngModel)]="email" id="email" type="email" placeholder="name@mail.ru" formControlName="email" required>
+        <small class="dangerMessage" *ngIf="form.controls['email'].invalid && form.controls['email'].touched">введите корректный email </small>
+    </div>
+
+    <div class="form-control">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" id="password" type="password" placeholder="password" formControlName="password">
+        <small class="dangerMessage" *ngIf="form.controls['password'].invalid && form.controls['password'].touched" >введите password </small>
+    </div>
+
+    <button class="form-btn btn" type="submit" [disabled]="form.invalid">Войти</button>
+</form>

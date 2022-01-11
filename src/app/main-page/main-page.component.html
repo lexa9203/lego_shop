@@ -1,0 +1,212 @@
+<section class="promo">
+    <div class="container">
+        <div class="slider">
+            <div class="slider__item">
+                <div class="promo__content">
+                    <img src="../../assets/img/image1.png" alt="promo-auto">
+                    <div class="promo__text">
+                        <p class="promo__header">оживи игру super Mario</p>
+                        <p>Воссоздайте ставшую классикой видеоигру с новым набором «Знак вопроса» <br>из super Mario LEGO.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="promo__content">
+                    <img src="../../assets/img/image2.png" alt="promo-auto">
+                    <div class="promo__text">
+                        <p class="promo__header">легендарный внедорожник</p>
+                        <p>Отдайте должное легендарному автомобилю с новым набором «Ford® F-150 Raptor».</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slider__item">
+                <div class="promo__content">
+                    <img src="../../assets/img/image3.png" alt="promo-auto">
+                    <div class="promo__text">
+                        <p class="promo__header">Подготовьтесь к приходу Санты</p>
+                        <p>От каминной трубы до ящика для писем — каждая деталь этого набора подарит вам радость от увлекательной сборки в кругу семьи.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="points__wrap">
+                <span class="points _dis"></span>
+                <span class="points _dis"></span>
+                <span class="points _dis"></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="search">
+    <div class="container">
+        <div class="search__img">
+            <img src="../../assets/img/batman.png" alt="batman">
+        </div>
+        <p class="title">
+            Конструкторы ЛЕГО для любого возраста
+        </p>
+        <div class="search__inputs">
+            <div class="search__check">
+                <div class="check__category">
+                    <div class="wrap__check_category">
+                        <input type="radio" name="category" id="id1" checked><label for="id1">Все</label>
+                        <input type="radio" name="category" id="id2"><label for="id2">Creator</label>
+                        <input type="radio" name="category" id="id3"><label for="id3">Speed Champions</label>
+                    </div>
+                    <div class="wrap__check_category">
+                        <input type="radio" name="category" id="id4"><label for="id4">Lego City</label>
+                        <input type="radio" name="category" id="id5"><label for="id5">Batman Movie</label>
+                        <input type="radio" name="category" id="id6"><label for="id6">Technic</label>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper__range">
+                <div class="search__range">
+                    <div class="slider__track"></div>
+                    <input (input)="slideOne()" id="slider_1" type="range" value="10000" max="50000">
+                    <input (input)="slideTwo()" id="slider_2" type="range" value="40000" max="50000">
+                </div>
+                <div class="values">
+                    <span>от</span>
+                    <span class="value" id="range_1">{{valueOne}}</span>
+                    <span>до</span>
+                    <span class="value" id="range_2">{{valueTwo}}</span>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn__search" routerLink="/products">Подобрать</button>
+    </div>
+</section>
+<section class="catalog bc">
+    
+        <div class="container">
+            <div class="title">Серии конструкторов</div>
+            <div class="catalog__preview"  *ngIf="products">
+                <div class="preview__row">
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[0].photo}}" alt="{{products[0].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[0].name}}</p>
+                            <p class="card__price">{{products[0].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[0])">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[1].photo}}" alt="{{products[1].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[1].name}}</p>
+                            <p class="card__price">{{products[1].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[1])">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card big__card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[2].photo}}" alt="{{products[2].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[2].name}}</p>
+                            <p class="card__price">{{products[2].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[2])">Купить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview__row">
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[3].photo}}" alt="{{products[3].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[3].name}}</p>
+                            <p class="card__price">{{products[3].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[3])">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[4].photo}}" alt="{{products[4].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[4].name}}</p>
+                            <p class="card__price">{{products[4].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[4])">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[5].photo}}" alt="{{products[5].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[5].name}}</p>
+                            <p class="card__price">{{products[5].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[5])">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card__img_wrap">
+                            <img class="card__img" src="{{products[6].photo}}" alt="{{products[6].name}}">
+                        </div>
+                        <div class="card__desc_wrap">
+                            <p class="card__title">{{products[6].name}}</p>
+                            <p class="card__price">{{products[6].price | price}} ₽</p>
+                            <button class="btn" (click)="log(products[6])">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn catalog__btn" routerLink="/products">Перейти в каталог</button>
+            <div class="block__img_main">
+                <div class="block__text">
+                    <p class="block__title">Праздничная классика</p>
+                    <p class="block__about">Проведите время в легендарном доме семьи Маккаллистеров с новым набором Home Alone LEGO</p>
+                    <button class="block__btn">Узнать больше ></button>
+                </div>
+            </div>
+            <div class="subblock">
+                <div class="subblock__container">
+                    <img class="subblock__img" src="../../assets/img/image6.png" alt="Соберите легендарный внедорожник">
+                    <p class="subblock__title">Соберите легендарный внедорожник</p>
+                    <p class="subblock__text">Отдайте должное легендарному автомобилю с новым набором «Ford® F-150 Raptor».</p>
+                    <button class="block__btn btn_black">Узнать больше ></button>
+                </div>
+                <div class="subblock__container">
+                    <img class="subblock__img" src="../../assets/img/image7.png" alt="Конструируйте захватывающие приключения">
+                    <p class="subblock__title">Конструируйте захватывающие приключения</p>
+                    <p class="subblock__text">Новые наборы LEGO® Marvel наделяют детей суперспособностями.</p>
+                    <button class="block__btn btn_black">Узнать больше ></button>
+                </div>
+            </div>
+        </div>
+    
+</section>
+<section class="about">
+    <div class="container">
+        <p class="title about__title">
+            Игрушки LEGO® для детей и родителей
+        </p>
+        <p class="about__text">В наших магазинах ЛЕГО представлены самые разнообразные игры и конструкторы LEGO, а также аксессуары,
+            одежда и приятные мелочи от производителя. Они подарят Вашему ребенку хорошее настроение
+            и положительные эмоции.
+        </p>
+        <div class="about__wrapper">
+            <div class="about__block">
+                <img src="../../assets/img/image8.png" alt="Интернет-магазин с доставкой">
+                <p class="about__block_text">Интернет-магазин с доставкой и резервом</p>
+            </div>
+            <div class="about__block">
+                <img src="../../assets/img/image13.png" alt="Эксклюзивные коллекции">
+                <p class="about__block_text">Эксклюзивные коллекции</p>
+            </div>
+            <div class="about__block">
+                <img src="../../assets/img/image10.png" alt="12 лет в России">
+                <p class="about__block_text">12 лет в России,<br>76 магазинов в сети</p>
+            </div>
+            <div class="about__block">
+                <img src="../../assets/img/image11.png" alt="мероприятия для детей">
+                <p class="about__block_text">Интересные мероприятия для детей</p>
+            </div>
+        </div>
+    </div>
+</section>
