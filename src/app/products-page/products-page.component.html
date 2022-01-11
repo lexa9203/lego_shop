@@ -16,7 +16,7 @@
       <div class="sort">
         <h2 class="sort__title">Цена</h2>
         <div *ngFor="let price of productPrice">
-          <input type="checkbox" [checked]="price.selected" (change)="onChangePrice($event)" value="{{price.valuePrice}}" id="{{price.id}}"><label for="{{price.id}}">от {{price.valuePrice[0]}} до {{price.valuePrice[1]}}</label> 
+          <input type="checkbox" [checked]="price.selected" (change)="onChangePrice($event)" value="{{price.valuePrice}}" id="{{price.id}}"><label for="{{price.id}}">{{price.valuePrice[0]}} - {{price.valuePrice[1]}}</label> 
         </div>
       </div>
     </div>
