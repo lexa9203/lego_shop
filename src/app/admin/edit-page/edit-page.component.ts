@@ -75,7 +75,6 @@ export class EditPageComponent implements OnInit {
 
   initializeForm() {
     if (this.currentProduct) {
-      
       this.form.setValue({
           name: this.currentProduct.name,
           price: this.currentProduct.price

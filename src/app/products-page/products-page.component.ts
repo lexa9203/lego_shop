@@ -128,7 +128,6 @@ export class ProductsPageComponent implements OnInit {
 
     for (let i = 0; i < this.productPrice.length; i++) {
       if (this.productPrice[i].selected === true) {
-
         this.arrPrice.push(this.productPrice[i].valuePrice[0])
         this.arrPrice.push(this.productPrice[i].valuePrice[1])
       }
@@ -139,5 +138,10 @@ export class ProductsPageComponent implements OnInit {
     
   }
 
+  addProduct(product:Products){
+    console.log("ok");
+    
+    this.productService.addToCart(product)
+  }
 
 }

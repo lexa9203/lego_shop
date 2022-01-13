@@ -9,7 +9,7 @@ import { ProductService } from '../admin/product.service';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent implements OnInit {
-  products!: Products[];
+  products: Products[];
 
   slider1: any
   slider2: any
@@ -117,6 +117,12 @@ export class MainPageComponent implements OnInit {
 
   log(value){
     console.log(value);
+  }
+
+  addProduct(product:Products){
+    console.log("ok");
+    
+    this.productService.addToCart(product)
   }
 
   

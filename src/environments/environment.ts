@@ -13,8 +13,7 @@ export const environment = {
     authDomain: 'legoshop-e9793.firebaseapp.com',
     messagingSenderId: '816407683531',
   },
-  production: false,
-  apiKey: "AIzaSyCDMuhUN-JZmUZ2pPJPr2VlOITPBEKyyVc",
+  production: false
 };
 
 /*

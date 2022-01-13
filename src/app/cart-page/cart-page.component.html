@@ -1,1 +1,4 @@
-<p>cart-page works!</p>
+
+<div>
+    <div class="product" *ngFor="let product of this.myProducts"><span><img style="width: 50px;" src="{{product.photo}}" alt="{{product.name}}"></span><span>{{product.name}}</span>  ______ <span>{{product.price}} ₽</span><span (click)="deleteProduct(product)">удалить</span></div>
+</div>

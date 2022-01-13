@@ -29,7 +29,7 @@
         <div class="card__desc_wrap">
           <p class="card__title">{{newProduct.name}}</p>
           <p class="card__price">{{newProduct.price | price}} ₽</p>
-          <button class="btn">купить</button>
+          <button class="btn" (click)="addProduct(newProduct)">купить</button>
         </div>
       </div>
     </div>

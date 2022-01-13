@@ -22,7 +22,7 @@ export class AuthService {
     setTimeout(() => {
       localStorage.removeItem("admin");
     }, 3600000);
-    return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.apiKey}`, admin);
+    return this.http.post(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.firebase.apiKey}`, admin);
   }
 
   logout() {

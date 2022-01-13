@@ -9,6 +9,8 @@ export class ProductService {
 
   currentProduct?: Products;
 
+  cartProducts: Products [] = []
+
   private dbPath = '/products';
 
   productsRef!: AngularFireList<Products>;
@@ -33,6 +35,9 @@ export class ProductService {
     return this.productsRef.remove(key);
   }
 
+  addToCart(product:Products){
+    this.cartProducts.push(product)
+  }
   
 
 
