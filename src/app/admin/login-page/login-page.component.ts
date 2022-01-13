@@ -14,6 +14,8 @@ import { AuthService } from '../auth.service';
 
 export class LoginPageComponent implements OnInit {
   
+  isAuth:boolean = false;
+
   email:string = "";
 
   password:string = "";
@@ -49,10 +51,20 @@ export class LoginPageComponent implements OnInit {
     }
 
     this.auth.login(admin).subscribe(() => {
+     
       this.form.reset;
       this.router.navigate(["/admin/add"]);
+      this.isAuth = true;
+      localStorage.setItem("admin", JSON.stringify(this.isAuth));
+      
+    },(err) => {
+      console.log(err);
+      console.log("не правильный пароль или  логин");
+      this.email = ""
+      this.password = ""
+      
     })
-
+    
     this.auth.isAuthenticated();
   } 
   
