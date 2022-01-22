@@ -1,5 +1,6 @@
 .form-login{
-    width: 500px;
+    max-width: 500px;
+    min-width: 290px;
     min-height: 300px;
     margin: 10vh auto 0;
     padding: 20px;
@@ -8,8 +9,8 @@
 }
 .form-title{
     font-size: 20px;
-    font-family: 'Proxima Nova' serif;
-    font-weight: 700;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 600;
     text-align: center;
     padding-bottom: 30px;
 }
@@ -20,8 +21,8 @@
 }
 .form-control label{
     font-size: 16px;
-    font-family: 'Proxima Nova' serif;
-    font-weight: 700;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 600;
 }
 .form-control input{
     border: 1px solid black;
@@ -38,4 +39,10 @@ input.ng-touched.ng-valid {
 }
 .dangerMessage{
     color: #FF1919;
+}
+@media screen and (max-width:530px){
+    .form-login{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }

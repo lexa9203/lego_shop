@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Products } from '../interface';
-import { ProductService } from '../product.service';
+import { Products } from '../../interface';
+import { ProductService } from '../../product.service';
 
 
 @Component({
@@ -11,9 +11,11 @@ import { ProductService } from '../product.service';
 })
 export class AddPageComponent implements OnInit {
 
+  modal:any;
+
   imgSrc!: string;
 
-  selectedImage: any = null;
+  selectedImage: string = "";
 
   form = new FormGroup({
     category: new FormControl("", Validators.required),
@@ -27,15 +29,20 @@ export class AddPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  ngAfterViewInit(){
+    this.modal = document.querySelector('.modal');
+  }
+
+  //ф-я для превью изображения
   onFileChanged(event:any) {
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files) {
       const reader = new FileReader();
       reader.onload = (e: any) => this.imgSrc = e.target.result;
       reader.readAsDataURL(event.target.files[0]);
       this.selectedImage = event.target.files[0];
     }
     else {
-      this.selectedImage = null;
+      this.selectedImage = "";
     }
     
   }
@@ -55,9 +62,11 @@ export class AddPageComponent implements OnInit {
     this.productsService.create(product);
     this.imgSrc = "";
     this.form.reset();
-    
+    this.modal.classList.remove('_hid');
+    this.modal.classList.add('_act');
+    setTimeout(() => {
+      this.modal.classList.remove('_act');
+      this.modal.classList.add('_hid');
+    }, 3000)
   }
-
-
-
 }

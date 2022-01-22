@@ -1,5 +1,6 @@
 .form-product{
-    width: 500px;
+    max-width: 500px;
+    min-width: 290px;
     min-height: 300px;
     margin: 10vh auto 0;
     padding: 20px;
@@ -8,8 +9,8 @@
 }
 .form-title{
     font-size: 20px;
-    font-family: 'Proxima Nova' serif;
-    font-weight: 700;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 600;
     text-align: center;
     padding-bottom: 30px;
 }
@@ -20,8 +21,8 @@
 }
 .form-control label{
     font-size: 16px;
-    font-family: 'Proxima Nova' serif;
-    font-weight: 700;
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 600;
 }
 .form-control input, select{
     border: 1px solid black;
@@ -46,4 +47,40 @@ option:hover{
 }
 .dangerMessage{
     color: #FF1919;
+}
+.modal{
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+}
+.modal__content{
+    width: 320px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 10% auto;
+    text-align: center;
+    padding: 70px 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.modal__content>img{
+    padding-bottom: 30px;
+}
+._hid {
+    display: none;
+}
+._act {
+    display: block;
+}
+
+@media screen and (max-width:530px){
+    .form-product{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
 }

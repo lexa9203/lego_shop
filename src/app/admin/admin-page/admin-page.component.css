@@ -8,7 +8,6 @@
 .header>.container{
     width: 1440px;
 }
-
 .menu__nav{
     display: flex;
     justify-content: space-between;
@@ -25,4 +24,52 @@
     margin-right: 30px;
     width: 52px;
     height: 52px;
+}
+.burger, .close>img, .main__link{
+    display: none;
+}
+@media screen and (max-width:570px){
+    .menu__list>li:not(:last-child){
+        padding-right: 0;
+    }
+    .menu__nav>a{
+        display: none;
+    }
+    .main__link{
+        display: block;
+    }
+    .burger, .close>img{
+        display: block;
+        width: 26px;
+        height: 26px;
+    }
+    .menu__list{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 170px;
+        top: 0px;
+        left: -300px;
+        width: 0px;
+        background-color: #fff;
+        height: 100%;
+        z-index: 100;
+        transition: all 0.9s ease;
+    }
+    .menu__list>li{
+        padding-bottom: 50px;
+    }
+    .open{
+        left: 0;
+        width: 100%;
+    }
+    .close{
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    
+
 }

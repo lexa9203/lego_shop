@@ -8,7 +8,7 @@ export class PricePipe implements PipeTransform {
   transform(value: number): unknown {
     let str = value.toString();
     let arr = str.split('');
-    arr.splice(-3, 0, ' ')
+    arr.splice(-3, 0, ' ');
     return arr.join('');
   }
 

@@ -4,11 +4,19 @@
     display: flex;
     align-items: center;
     font-weight: 600;
+    position: fixed;
+    width: 100%;
+    top:0;
+    z-index: 999;
+    box-shadow: 0px 1px 30px #b9b6b6;
+
 }
 .header>.container{
     width: 1440px;
 }
-
+.header__social, .close{
+    display: none;
+}
 .menu__nav{
     display: flex;
     justify-content: space-between;
@@ -32,7 +40,14 @@
 .menu__list_img{
     display: none;
 }
-.header__mobile{
+.account a{
+    display: flex; 
+    align-items: center;
+}
+.account img{
+    padding: 0 5px 5px;
+}
+.burger, .main__link, .img_white{
     display: none;
 }
 @media screen and (max-width:920px) {
@@ -41,8 +56,8 @@
         align-items: center;
     }
     .menu__list_img>img{
-        height: 40px;
-        width: 40px;
+        height: 26px;
+        width: 26px;
         margin-left: 10px;
     }
     .account {
@@ -52,24 +67,78 @@
         padding: 0 25px;
     }
 }
-@media screen and (max-width:700px) {
-    .header__mobile{
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-        padding: 10px;
-    }
-    .header__mobile>p{
-        padding-left: 10px;
-    }
+@media screen and (max-width:720px) {
+   
     .header__logo{
         display: none;
     }
-}
+    .header{
+        position: fixed;
+        top: 0;
+        min-height: 50px;
+    }
 
+    .burger, .main__link, .img_white{
+        display: block;
+    }
+    .img_black{
+        display: none;
+    }
+    .menu__list_img{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .close{
+        display: block;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+    .menu__list>li:first-child{
+        padding-top: 0;
+    }
+    .close>img{
+        width: 26px;
+        height: 26px;
+    }
+    .header__social{
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+    }
+    .header__social>.social__icon{
+        margin-left: 25px;
+        background-color: #201E47;
+    }
+    .menu__list{
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 70px;
+        top: 0px;
+        left: -300px;
+        width: 0px;
+        background-color: #fff;
+        height: 100%;
+        z-index: 100;
+        transition: all 0.9s ease;
+    }
+    .menu__list>li:not(:last-child){
+        padding-right: 0px;
+    }
+    .menu__list>li{
+        padding-top: 40px;
+    }
+    .open{
+        left: 0;
+        width: 100%;
+    }
+}
 /* footer */
 .footer{
-    min-height: 300px;
+    min-height: 150px;
     background: #201E47;
     color: white;
 }
@@ -78,13 +147,16 @@
     justify-content: space-between;
     padding: 60px 0 80px;
 }
+.footer__logo{
+    margin-right: 40px;
+}
 .footer__content{
     display: flex;
     flex: 0 1 45%;
     justify-content: flex-start;
 }
-.footer__col:not(:last-child){
-    margin-right: 50px;
+.footer__col{
+    margin-right: 35px;
 }
 .content__title{
     font-weight: 600;
@@ -106,6 +178,7 @@
     opacity: 0.8;
 }
 .social__title{
+    text-align: left;
     font-weight: 600;
     padding-bottom: 20px;
 }
@@ -127,4 +200,66 @@
     cursor: pointer;
     transition: opacity ease 0.5s;
     opacity: 0.8;
+}
+
+@media screen and (max-width:1210px) {
+    .footer__col{
+        margin-right: 25px;
+    }
+    .content__title, .social__title{
+        font-size: 13px;
+    }
+    .footer__content{
+        flex: 0 1 55%;
+    }
+    .social__icon{
+        margin-right: 15px;
+        margin-left: 0px;
+    }
+    .wrapper__icon{
+        justify-content: flex-start;
+    }
+}
+@media screen and (max-width:1015px) {
+    .footer__col{
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width:850px){
+    .footer__col:last-child{
+        display: none;
+    }
+}
+@media screen and (max-width:700px){
+    .footer__wrapper{
+        padding: 30px 0;
+    }
+}
+@media screen and (max-width:600px) {
+    .footer__col:nth-child(2){
+        display: none;
+    }
+}
+@media screen and (max-width:525px) {
+    .footer__content{
+        display: none;
+    }
+    .footer__wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__logo{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .social__icon{
+        margin-left: 0;
+    }
+    .wrapper__icon{
+        justify-content: space-between;
+    }
+    .footer__logo{
+        display: none;
+    }
+    
 }

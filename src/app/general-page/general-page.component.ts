@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralPageComponent implements OnInit {
 
+  navMenu: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ngAfterViewInit() {
+    this.navMenu = document.querySelector('.menu__list');
+  }
+
+  openModal() {
+    this.navMenu.classList.add('open');
+  }
+
+  closeModal() {
+    this.navMenu.classList.remove('open');
+  }
 }

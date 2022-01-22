@@ -9,9 +9,9 @@
     </div>
 
     <div class="form-control">
-        <label for="password">Password</label>
-        <input [(ngModel)]="password" id="password" type="password" placeholder="password" formControlName="password">
-        <small class="dangerMessage" *ngIf="form.controls['password'].invalid && form.controls['password'].touched" >введите password </small>
+        <label for="password">Пароль</label>
+        <input [(ngModel)]="password" id="password" type="password" placeholder="пароль" formControlName="password">
+        <small class="dangerMessage" *ngIf="form.controls['password'].invalid && form.controls['password'].touched" >введите пароль </small>
     </div>
 
     <button class="form-btn btn" type="submit" [disabled]="form.invalid">Войти</button>

@@ -3,17 +3,16 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
-
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
 
-
-
 export class LoginPageComponent implements OnInit {
-  
+
+  isAuth:boolean = false;
+
   email:string = "";
 
   password:string = "";
@@ -26,6 +25,37 @@ export class LoginPageComponent implements OnInit {
     ) { }
   
   ngOnInit():void {
+    this.renderingForm();
+  }
+
+  ngAfterViewInit(){
+  }
+
+  myValidForm() {
+    if(this.form.invalid){
+      return;
+    }
+
+    const admin = {
+      email:this.form.value.email,
+      password:this.form.value.password
+    }
+
+    this.auth.login(admin).subscribe(() => {
+      this.form.reset;
+      this.router.navigate(["/admin/add"]);
+      this.isAuth = true;
+      sessionStorage.setItem("admin", JSON.stringify(this.isAuth));
+    },(err) => {
+      console.log(err);
+      this.email = "";
+      this.password = "";
+    })
+
+    this.auth.isAuthenticated();
+  } 
+  
+  renderingForm(){
     this.form = new FormGroup({
       email: new FormControl(this.email, [
         Validators.required, 
@@ -37,23 +67,4 @@ export class LoginPageComponent implements OnInit {
       ]),
     })
   }
-
-  myValidForm() {
-    if(this.form.invalid){
-      return
-    }
-
-    const admin = {
-      email:this.form.value.email,
-      password:this.form.value.password
-    }
-
-    this.auth.login(admin).subscribe(() => {
-      this.form.reset;
-      this.router.navigate(["/admin/add"]);
-    })
-
-    this.auth.isAuthenticated();
-  } 
-  
 }

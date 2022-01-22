@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Products } from '../interface';
-import { ProductService } from '../product.service';
+import { Products } from '../../interface';
+import { ProductService } from '../../product.service';
 import { map } from 'rxjs/operators';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -10,27 +10,28 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./edit-page.component.css']
 })
 
-
 export class EditPageComponent implements OnInit {
-  products?: Products[];
-  currentProduct?: Products;
-  productsName: any;
 
+  products: Products[] = [];
+
+  currentProduct?: Products;
+
+  productsName: string = "";
 
   form = new FormGroup({
-    name: new FormControl("",Validators.required),
-    price: new FormControl("",Validators.required),
+    name: new FormControl("", Validators.required),
+    price: new FormControl("", Validators.required),
   })
 
   nameProduct = new FormControl("");
 
-  
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.retrieveProducts();
   }
 
+  //загрузка из fb snapshotChanges-метод возвращает данные с ключами
   retrieveProducts(): void {
     this.productService.getAll().snapshotChanges().pipe(
       map(changes =>
@@ -45,18 +46,16 @@ export class EditPageComponent implements OnInit {
 
   setActiveProduct(product: Products): void {
     this.currentProduct = product;
-    console.log(this.currentProduct);
-    this.initializeForm()
+    this.initializeForm();
   }
 
   deleteProduct(product: Products): void {
     if (product.key) {
       this.productService.delete(product.key);
-      console.log("удалено");
-    } 
+    }
     this.retrieveProducts();
   }
-  
+
   updateProduct(product: Products): void {
     const data = {
       name: this.form.value.name,
@@ -69,16 +68,16 @@ export class EditPageComponent implements OnInit {
     }
   }
 
-  closeModal() {
+  closeModal(): void {
     this.currentProduct = undefined;
   }
 
-  initializeForm() {
+  initializeForm(): void {
     if (this.currentProduct) {
       this.form.setValue({
-          name: this.currentProduct.name,
-          price: this.currentProduct.price
+        name: this.currentProduct.name,
+        price: this.currentProduct.price
       })
     }
-}
+  }
 }

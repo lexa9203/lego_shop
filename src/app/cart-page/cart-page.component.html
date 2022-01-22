@@ -1,4 +1,64 @@
-
-<div>
-    <div class="product" *ngFor="let product of this.myProducts"><span><img style="width: 50px;" src="{{product.photo}}" alt="{{product.name}}"></span><span>{{product.name}}</span>  ______ <span>{{product.price}} ₽</span><span (click)="deleteProduct(product)">удалить</span></div>
+<div class="bc">
+    <div class="container">
+        <div *ngIf="myProducts.length>0">
+            <div class="cart__title">КОРЗИНА</div>
+            <p class="cart__order">ВАШ ЗАКАЗ</p>
+            
+            <div class="cart__wrapper">
+                <div class="cart__products">
+                    <div class="product" *ngFor="let product of myProducts">
+                        <img class="product__img" src="{{product.photo}}" alt="{{product.name}}">
+                        <div class="product__wrapper">
+                            <div class="product__descr">
+                                <p class="product__name">{{product.name}}</p>
+                                <p class="product__article">Арт. 621000</p>
+                                <div class="product__delivery">
+                                    <div class="delivery">
+                                        <img src="../../assets/img/express-delivery.png" alt="express">
+                                        <p>Курьером</p>
+                                    </div>
+                                    <div class="delivery">
+                                        <img src="../../assets/img/maps-and-flags.png" alt="flag">
+                                        <p>Самовывоз</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product__descr_total">
+                                <p>{{product.price}}&nbsp;₽</p>
+                                <span class="btn_delete" (click)="deleteProduct(product)">удалить</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart__total">
+                    <button class="btn btn__cart" (click)="orderNow()">Оформить заказ на {{total}}&nbsp;₽ </button>
+                    <p class="cart__text">Доступные способы и время доставки можно выбрать при оформлении заказа</p>
+                    <p class="your__cart">Ваша корзина</p>
+                    <div class="cart__descr"><p>Стоимость</p><p>{{total}}&nbsp;₽</p></div>
+                    <div class="cart__descr"><p>Скидка</p><p class="cart__sale">-0</p></div>
+                    <div class="cart__descr mb_max"><p>Доставка</p><p>Бесплатно</p></div>
+                    <div class="hr"></div>
+                    <div class="cart__descr"><p>ИТОГО:</p><p class="cart__price">{{total}}&nbsp;₽</p></div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="myProducts.length<=0">
+            <div class="cart__title">КОРЗИНА ПУСТА</div>
+            <div class="cart__empty">
+                <img src="../../assets/img/shopping-cart.png" alt="cart">
+                <p>В корзине пока пусто.</p>
+                <p>Может, попробуем найти что-то в <span routerLink="/products">каталоге</span> ?</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="modal _hid">
+    <div class="modal__content">
+        <img src="../../assets/img/success.png" alt="success">
+        <p>Ваш заказ успешно сформирован</p>
+    </div>
+</div>
+
+
+

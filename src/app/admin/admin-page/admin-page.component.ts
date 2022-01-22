@@ -10,6 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class AdminPageComponent implements OnInit {
 
+  navMenu: any;
+
   constructor(
     private router: Router,
     private auth: AuthService ) {  }
@@ -18,14 +20,27 @@ export class AdminPageComponent implements OnInit {
     
   }
 
+  ngAfterViewInit() {
+    this.navMenu = document.querySelector('.menu__list');
+  }
+
+  //выход из админки
   logout () {
     this.auth.logout();
+    this.closeModal();
     this.router.navigate(["/admin/login"]);
   }
-
-  log(){
+  
+  //проверка аунтифицирован ли админ
+  authenticated(){
     return this.auth.isAuthenticated();
   }
-  
 
+  openModal() {
+    this.navMenu.classList.add('open');
+  }
+
+  closeModal() {
+    this.navMenu.classList.remove('open');
+  }
 }

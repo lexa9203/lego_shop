@@ -1,14 +1,17 @@
 <header class="header">
     <div class="container">
         <nav class="menu__nav">
+            <img (click)="openModal()" class="burger" src="../../../assets/img/menu.png" alt="burger">
             <a routerLink="/">
                 <img class="header__logo" src="../../assets/img/logo.png" alt="logo">
             </a>
             <ul class="menu__list account">
-                <li *ngIf="log()" routerLinkActive="active"><a routerLink="/admin/add">Добавить товар</a></li>
-                <li *ngIf="log()" routerLinkActive="active"><a routerLink="/admin/edit">Редактировать товар</a></li>
-                <li *ngIf="!log()" routerLinkActive="active"><a routerLink="/admin/login">Войти</a></li>
-                <li *ngIf="log()" routerLinkActive="active"><a (click)=logout()>Выйти</a></li>
+                <li (click)="closeModal()" class="close"><img src="../../../assets/img/close.png" alt="close"></li>
+                <li (click)="closeModal()" class="main__link"><a routerLink="/">Главная</a></li>
+                <li (click)="closeModal()" *ngIf="authenticated()"><a routerLink="/admin/add">Добавить товар</a></li>
+                <li (click)="closeModal()" *ngIf="authenticated()"><a routerLink="/admin/edit">Редактировать товар</a></li>
+                <li (click)="closeModal()" *ngIf="!authenticated()"><a routerLink="/admin/login">Войти</a></li>
+                <li *ngIf="authenticated()"><a (click)=logout()>Выйти</a></li>
             </ul>
             
         </nav>

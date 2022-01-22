@@ -3,35 +3,46 @@
         <div class="slider">
             <div class="slider__item">
                 <div class="promo__content">
-                    <img src="../../assets/img/image1.png" alt="promo-auto">
+                    <div class="img__wrapper">
+                        <img class="desktop__slider" src="../../assets/img/image1.png" alt="promo-auto">
+                        <img class="mobile__slider" src="../../assets/img/image1_mobile.png" alt="promo-auto">
+                    </div>
                     <div class="promo__text">
                         <p class="promo__header">оживи игру super Mario</p>
-                        <p>Воссоздайте ставшую классикой видеоигру с новым набором «Знак вопроса» <br>из super Mario LEGO.</p>
+                        <p class="promo__about">Воссоздайте ставшую классикой видеоигру с новым набором «Знак вопроса» <br>из super Mario LEGO.</p>
                     </div>
                 </div>
             </div>
             <div class="slider__item">
                 <div class="promo__content">
-                    <img src="../../assets/img/image2.png" alt="promo-auto">
+                    <div class="img__wrapper">
+                        <img class="desktop__slider" src="../../assets/img/image2.png" alt="promo-auto">
+                        <img class="mobile__slider" src="../../assets/img/image2_mobile.png" alt="promo-auto">
+                    </div>
                     <div class="promo__text">
                         <p class="promo__header">легендарный внедорожник</p>
-                        <p>Отдайте должное легендарному автомобилю с новым набором «Ford® F-150 Raptor».</p>
+                        <p class="promo__about">Отдайте должное легендарному автомобилю с новым набором «Ford® F-150 Raptor».</p>
                     </div>
                 </div>
             </div>
             <div class="slider__item">
                 <div class="promo__content">
-                    <img src="../../assets/img/image3.png" alt="promo-auto">
+                    <div class="img__wrapper">
+                        <img class="desktop__slider" src="../../assets/img/image3.png" alt="promo-auto">
+                        <img class="mobile__slider" src="../../assets/img/image3_mobile.png" alt="promo-auto">
+                    </div>
                     <div class="promo__text">
                         <p class="promo__header">Подготовьтесь к приходу Санты</p>
-                        <p>От каминной трубы до ящика для писем — каждая деталь этого набора подарит вам радость от увлекательной сборки в кругу семьи.</p>
+                        <p class="promo__about">От каминной трубы до ящика для писем — каждая деталь этого набора подарит вам радость от увлекательной сборки в кругу семьи.</p>
                     </div>
                 </div>
             </div>
-            <div class="points__wrap">
-                <span class="points _dis"></span>
-                <span class="points _dis"></span>
-                <span class="points _dis"></span>
+            <div class="points__content">
+                <div class="points__wrap">
+                    <span class="points _dis"></span>
+                    <span class="points _dis"></span>
+                    <span class="points _dis"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -42,117 +53,166 @@
             <img src="../../assets/img/batman.png" alt="batman">
         </div>
         <p class="title">
-            Конструкторы ЛЕГО для любого возраста
+            Выбери свой конструктор lego
         </p>
         <div class="search__inputs">
             <div class="search__check">
                 <div class="check__category">
                     <div class="wrap__check_category">
-                        <input type="radio" name="category" id="id1" checked><label for="id1">Все</label>
-                        <input type="radio" name="category" id="id2"><label for="id2">Creator</label>
-                        <input type="radio" name="category" id="id3"><label for="id3">Speed Champions</label>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="All" name="category" id="id1" checked><label for="id1">Все</label>
+                        </div>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="Creator" name="category" id="id2"><label for="id2">Creator</label>
+                        </div>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="Speed" name="category" id="id3"><label for="id3">Speed Champions</label>
+                        </div>
                     </div>
                     <div class="wrap__check_category">
-                        <input type="radio" name="category" id="id4"><label for="id4">Lego City</label>
-                        <input type="radio" name="category" id="id5"><label for="id5">Batman Movie</label>
-                        <input type="radio" name="category" id="id6"><label for="id6">Technic</label>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="City" name="category" id="id4"><label for="id4">Lego City</label>
+                        </div>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="Batman" name="category" id="id5"><label for="id5">Batman Movie</label>
+                        </div>
+                        <div>
+                            <input [formControl]="nameCategory" [(ngModel)]="category" type="radio" value="Technic" name="category" id="id6"><label for="id6">Technic</label>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="wrapper__range">
                 <div class="search__range">
                     <div class="slider__track"></div>
-                    <input (input)="slideOne()" id="slider_1" type="range" value="10000" max="50000">
-                    <input (input)="slideTwo()" id="slider_2" type="range" value="40000" max="50000">
+                    <input (input)="slideOne()" id="slider_1" type="range" value="1000" max="50000">
+                    <input (input)="slideTwo()" id="slider_2" type="range" value="49000" max="50000">
                 </div>
                 <div class="values">
                     <span>от</span>
                     <span class="value" id="range_1">{{valueOne}}</span>
+                    <span>₽</span>
                     <span>до</span>
-                    <span class="value" id="range_2">{{valueTwo}}</span>
+                    <span class="value" id="range_2">{{valueTwo}} </span>
+                    <span>₽</span>
                 </div>
             </div>
         </div>
-        <button class="btn btn__search" routerLink="/products">Подобрать</button>
+        <button class="btn btn__search" (click)="setCategory()">Подобрать</button>
     </div>
 </section>
 <section class="catalog bc">
-    
         <div class="container">
             <div class="title">Серии конструкторов</div>
-            <div class="catalog__preview"  *ngIf="products">
+            <div class="catalog__preview">
                 <div class="preview__row">
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[0].photo}}" alt="{{products[0].name}}">
-                        </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[0].name}}</p>
-                            <p class="card__price">{{products[0].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[0])">Купить</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[1].photo}}" alt="{{products[1].name}}">
-                        </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[1].name}}</p>
-                            <p class="card__price">{{products[1].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[1])">Купить</button>
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[0]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[0]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[0].photo}}" alt="{{products[0].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[0].name}}</p>
+                                <p class="card__price">{{products[0].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[0], $event)">Купить</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="card big__card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[2].photo}}" alt="{{products[2].name}}">
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[1]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[1]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[1].photo}}" alt="{{products[1].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[1].name}}</p>
+                                <p class="card__price">{{products[1].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[1], $event)">Купить</button>
+                            </div>
                         </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[2].name}}</p>
-                            <p class="card__price">{{products[2].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[2])">Купить</button>
+                    </div>
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[2]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[2]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[2].photo}}" alt="{{products[2].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[2].name}}</p>
+                                <p class="card__price">{{products[2].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[2], $event)">Купить</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[3]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[3]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[3].photo}}" alt="{{products[3].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[3].name}}</p>
+                                <p class="card__price">{{products[3].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[3], $event)">Купить</button>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="preview__row">
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[3].photo}}" alt="{{products[3].name}}">
-                        </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[3].name}}</p>
-                            <p class="card__price">{{products[3].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[3])">Купить</button>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[4].photo}}" alt="{{products[4].name}}">
-                        </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[4].name}}</p>
-                            <p class="card__price">{{products[4].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[4])">Купить</button>
+                    <div  class="card__wrap">
+                        <div class="loader" *ngIf="!products[4]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[4]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[4].photo}}" alt="{{products[4].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[4].name}}</p>
+                                <p class="card__price">{{products[4].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[4], $event)">Купить</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[5].photo}}" alt="{{products[5].name}}">
-                        </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[5].name}}</p>
-                            <p class="card__price">{{products[5].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[5])">Купить</button>
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[5]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[5]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[5].photo}}" alt="{{products[5].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[5].name}}</p>
+                                <p class="card__price">{{products[5].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[5], $event)">Купить</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card__img_wrap">
-                            <img class="card__img" src="{{products[6].photo}}" alt="{{products[6].name}}">
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[6]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[6]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[6].photo}}" alt="{{products[6].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[6].name}}</p>
+                                <p class="card__price">{{products[6].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[6], $event)">Купить</button>
+                            </div>
                         </div>
-                        <div class="card__desc_wrap">
-                            <p class="card__title">{{products[6].name}}</p>
-                            <p class="card__price">{{products[6].price | price}} ₽</p>
-                            <button class="btn" (click)="addProduct(products[6])">Купить</button>
+                        
+                    </div>
+                    <div class="card__wrap">
+                        <div class="loader" *ngIf="!products[7]"><img src="../../assets/img/1495.gif"></div>
+                        <div class="card" *ngIf="products[7]">
+                            <div class="card__img_wrap">
+                                <img class="card__img" src="{{products[7].photo}}" alt="{{products[7].name}}">
+                            </div>
+                            <div class="card__desc_wrap">
+                                <p class="card__title">{{products[7].name}}</p>
+                                <p class="card__price">{{products[7].price! | price}} ₽</p>
+                                <button class="btn" (click)="addProduct(products[7], $event)">Купить</button>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -161,7 +221,7 @@
                 <div class="block__text">
                     <p class="block__title">Праздничная классика</p>
                     <p class="block__about">Проведите время в легендарном доме семьи Маккаллистеров с новым набором Home Alone LEGO</p>
-                    <button class="block__btn">Узнать больше ></button>
+                    <button routerLink="/products" class="block__btn">Узнать больше ></button>
                 </div>
             </div>
             <div class="subblock">
@@ -169,17 +229,16 @@
                     <img class="subblock__img" src="../../assets/img/image6.png" alt="Соберите легендарный внедорожник">
                     <p class="subblock__title">Соберите легендарный внедорожник</p>
                     <p class="subblock__text">Отдайте должное легендарному автомобилю с новым набором «Ford® F-150 Raptor».</p>
-                    <button class="block__btn btn_black">Узнать больше ></button>
+                    <button routerLink="/products" class="block__btn btn_black">Узнать больше ></button>
                 </div>
                 <div class="subblock__container">
                     <img class="subblock__img" src="../../assets/img/image7.png" alt="Конструируйте захватывающие приключения">
                     <p class="subblock__title">Конструируйте захватывающие приключения</p>
                     <p class="subblock__text">Новые наборы LEGO® Marvel наделяют детей суперспособностями.</p>
-                    <button class="block__btn btn_black">Узнать больше ></button>
+                    <button routerLink="/products" class="block__btn btn_black">Узнать больше ></button>
                 </div>
             </div>
         </div>
-    
 </section>
 <section class="about">
     <div class="container">

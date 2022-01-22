@@ -1,26 +1,26 @@
 <div class="bc">
-  <h2 class="products__title title">Товары</h2>
+  <div class="container__title">
+    <h2 class="products__title title">Товары</h2>
+  </div>
   <div class="container">
     <div class="sort__wrapper">
       <div class="sort">
         <h2 class="sort__title">Серия товара</h2>
-        <div *ngFor="let category of productCategory">
-          <input type="checkbox" [checked]="category.selected" (change)="onChangeCategory($event)" value="{{category.nameCategory}}" id="{{category.id}}"><label for="{{category.id}}">{{category.nameCategory}}</label>
+        <div>
+          <div *ngFor="let category of productCategory">
+            <input type="checkbox" [checked]="category.selected" (change)="onChangeCategory($event)" value="{{category.category}}" id="{{category.id}}"><label for="{{category.id}}">{{category.category}}</label>
+          </div>
         </div>
       </div>
-
-
-
-
-
       <div class="sort">
         <h2 class="sort__title">Цена</h2>
-        <div *ngFor="let price of productPrice">
-          <input type="checkbox" [checked]="price.selected" (change)="onChangePrice($event)" value="{{price.valuePrice}}" id="{{price.id}}"><label for="{{price.id}}">{{price.valuePrice[0]}} - {{price.valuePrice[1]}}</label> 
+        <div>
+          <div *ngFor="let price of productPrice">
+            <input type="checkbox" [checked]="price.selected" (change)="onChangePrice($event)" value="{{price.price}}" id="{{price.id}}"><label for="{{price.id}}">{{price.price[0]}} - {{price.price[1]}}</label> 
+          </div>
         </div>
       </div>
     </div>
-    
     <div class="card__wrap">
       <div class="card" *ngFor="let newProduct of products | sortproducts:arrCategory:arrPrice">
         <div class="card__img_wrap">
@@ -29,7 +29,7 @@
         <div class="card__desc_wrap">
           <p class="card__title">{{newProduct.name}}</p>
           <p class="card__price">{{newProduct.price | price}} ₽</p>
-          <button class="btn" (click)="addProduct(newProduct)">купить</button>
+          <button class="btn" (click)="addProduct(newProduct, $event)">купить</button>
         </div>
       </div>
     </div>

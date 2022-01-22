@@ -81,6 +81,11 @@ h1, h2, h3, h4, h5, h6{
     margin: 0 auto;
     padding: 0 65px;
 }
+@media screen and (max-width:920px){
+    .container{
+        padding: 0 25px;
+    } 
+}
 .btn{
     font-weight: 600;
     padding: 16px 60px;
@@ -97,14 +102,14 @@ h1, h2, h3, h4, h5, h6{
 }
 .bc{
     background-color: #efefef63;
-  }
+}
 
 /* fonts */
 @font-face {
     font-family: 'Proxima Nova';
     font-style:normal;
     font-weight: 300;
-    src: url(./assets/fonts/proximanova_light.otf) format('opentype');
+    src: url(./assets/fonts/proximanova_light.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Proxima Nova';
@@ -116,7 +121,7 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Proxima Nova';
     font-style:normal;
     font-weight: 600;
-    src: url(./assets/fonts/proximanova_extrabold.otf) format('opentype');
+    src: url(./assets/fonts/proximanova_extrabold.ttf) format('truetype');
 }
 @font-face {
     font-family: 'Proxima Nova';
@@ -124,4 +129,6 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 900;
     src: url(./assets/fonts/proximanova_black.ttf) format('truetype');
 }
+
+
  
